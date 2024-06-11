@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const { Sequelize } = require('sequelize');
 
-/*
+
 // URL de conexión proporcionada por Render
 const databaseUrl=process.env.RENDER_DB_URL;
 
@@ -24,10 +24,11 @@ const sequelize = new Sequelize(
       timestamps: false,
     },
 });
-*/
+
 
   // Configuración de conexión a la base de datos LOCAL
-const sequelize = new Sequelize(
+/*
+  const sequelize = new Sequelize(
   process.env.BASENAME,
   process.env.BASEUSER,
   process.env.BASEPASS, { //esos da7os deberian es7ar en el env
@@ -39,7 +40,7 @@ const sequelize = new Sequelize(
   },
   
 });
-
+*/
 
 /*
 const dbConeccion = async () => {
