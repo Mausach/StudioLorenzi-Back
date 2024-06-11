@@ -2,8 +2,9 @@ const express = require('express');
 const { crearProyecto,crearCliente,actualizarEstadoProyecto,eliminarCliente,eliminarProyecto,editarCliente,editarProyecto, cargarProyectos, cargarClientes } = require('../Controllers/admin');
 
 const { check } = require('express-validator');
-const { validarCampos } = require('../Midelwares/ValidarCampos');
-const { ValidarJWT } = require('../Midelwares/ValidarJWT');
+const { validarCampos } = require('../Middlewares/ValidarCampos');
+const { ValidarJWT } = require('../Middlewares/ValidarJWT');
+
 
 
 
