@@ -3,7 +3,7 @@ const {  loginUsuario ,crearUsuario} = require('../Controllers/auth');
 
 const { check } = require('express-validator');
 const { validarCampos } = require('../Midelwares/ValidarCampos');
-const { validarJWT } = require('../Midelwares/ValidarJWT');
+
 //const { validarJWTAdmin } = require('../Midelwares/validarJwtAdmin');
 const routerAuth = express.Router();
 
