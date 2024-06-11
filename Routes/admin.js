@@ -7,6 +7,7 @@ const { validarJWT } = require('../Midelwares/ValidarJWT');
 
 
 
+
 //const { validarJWTAdmin } = require('../Midelwares/validarJwtAdmin');
 
 const routerAdmin = express.Router();
