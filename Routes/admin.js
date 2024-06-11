@@ -3,7 +3,8 @@ const { crearProyecto,crearCliente,actualizarEstadoProyecto,eliminarCliente,elim
 
 const { check } = require('express-validator');
 const { validarCampos } = require('../Midelwares/ValidarCampos');
-const { validarJWT } = require('../Midelwares/ValidarJWT');
+const { ValidarJWT } = require('../Midelwares/ValidarJWT');
+
 
 
 
@@ -28,7 +29,7 @@ routerAdmin.post('/new-Proyect', [// para nuevo proyecto
     check("costsGoogle", "Die Google-Kosten sind obligatorisch").isInt(),
     check("clientId", "Die Kunden-ID ist obligatorisch").isInt(),
     validarCampos,
-    validarJWT,
+   ValidarJWT ,
 ], crearProyecto);
 
 routerAdmin.post('/new-Client', [
@@ -49,7 +50,7 @@ routerAdmin.post('/new-Client', [
     check("phoneNr", "Die Rufnummer ist obligatorisch").not().isEmpty(),
     // Aquí puedes agregar más validaciones según sea necesario
     validarCampos,
-    validarJWT,
+    ValidarJWT,
 ], crearCliente);
 
 // Ruta para actualizar el estado de un proyecto por id
@@ -62,25 +63,25 @@ routerAdmin.put('/project-update-status', [
 routerAdmin.put('/client-edit', [
     check('clientId', 'Die Kunden-ID ist obligatorisch').not().isEmpty(),
     validarCampos,
-    validarJWT,
+    ValidarJWT,
 ], editarCliente);
 
 // Ruta para editar un proyecto por id
 routerAdmin.put('/proyect-edit', [
     check('proyectId', 'Die Projekt-ID ist obligatorisch').not().isEmpty(),
     validarCampos,
-    validarJWT,
+    ValidarJWT,
 ], editarProyecto);
 
 // Ruta para eliminar un proyecto
-routerAdmin.delete('/delete-project/:proyectId',validarJWT, eliminarProyecto);
+routerAdmin.delete('/delete-project/:proyectId',ValidarJWT, eliminarProyecto);
 
 // Ruta para eliminar un cliente
-routerAdmin.delete('/delete-client/:clientId',validarJWT, eliminarCliente);
+routerAdmin.delete('/delete-client/:clientId',ValidarJWT, eliminarCliente);
 
-routerAdmin.get('/proyects', validarJWT, cargarProyectos); //carga de proyectos
+routerAdmin.get('/proyects', ValidarJWT, cargarProyectos); //carga de proyectos
 
-routerAdmin.get('/clients', validarJWT, cargarClientes); //carga de clientes
+routerAdmin.get('/clients', ValidarJWT, cargarClientes); //carga de clientes
 
 
 
